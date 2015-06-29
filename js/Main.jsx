@@ -1,4 +1,3 @@
-require("../css/main.scss");
 require("./frame.js");
 var React = require('react');
 var $ = require("jquery");
