@@ -7,15 +7,25 @@ var sassLoaders = [
     "autoprefixer-loader",
     "sass-loader"
 ];
+var entries = [
+        './css/main.scss',
+        './js/Main.jsx',
+        './js/background.js',
+        './manifest.json'
+    ]
+    .concat(glob.sync('./*.html'))
+    .concat(glob.sync('./img/*'));
+
 var IxInternetPortal = {
-    entry: {
-        html : glob.sync('./*.html'),
-        scss : './css/main.scss',
-        img : glob.sync('./img/*'),
-        main : './js/Main.jsx',
-        backgroundJs : './js/background.js',
-        manifest : './manifest.json'
-    },
+    // entry: {
+    //     html : glob.sync('./*.html'),
+    //     scss : './css/main.scss',
+    //     img : glob.sync('./img/*'),
+    //     main : './js/Main.jsx',
+    //     backgroundJs : './js/background.js',
+    //     manifest : './manifest.json'
+    // },
+    entry: entries,
     module: {
         loaders: [
             {
@@ -26,9 +36,9 @@ var IxInternetPortal = {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract("style-loader", sassLoaders.join("!"))
             },
-            { 
+            {
                 test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.ico$/,
-                loader: "file?name=../img/[name].[ext]" 
+                loader: "file?name=../img/[name].[ext]"
             },
             {
                 test: /\.jsx$/,
@@ -46,7 +56,7 @@ var IxInternetPortal = {
     },
     output: {
         path: path.join(__dirname, "build/js"),
-        filename: "[name].js" 
+        filename: "[name].js"
     },
     plugins: [
         new ExtractTextPlugin('../css/main.css')
