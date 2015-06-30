@@ -15,7 +15,7 @@ var Main = React.createClass({
   componentDidMount: function() {
     var _this = this;
     var storage = localStorage;
-    if(storage.length == 1){
+    if(storage.getItem("livewire") !== null){
       var data = JSON.parse(storage.getItem("livewire"));
       _this.setState({
         response : true,
