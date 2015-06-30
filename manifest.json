@@ -1,21 +1,22 @@
+
 {
     "name": "Indix Livewire",
-    "version": "1.0",
-    "description": "lorem ipsum",
+    "version": "1.2",
+    "description": "Information Powerhouse of Indix",
     "manifest_version": 2,
     "permissions": [
-    "tabs"
+        "tabs"
     ],
-    "icons": { 
+    "icons": {
         "16": "img/icon16.png",
         "48": "img/icon48.png",
-        "128": "img/icon128.png" 
-        },
-        "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
-        "chrome_url_overrides" : {
-            "newtab": "index.html"
-            },
-            "background": {
-                "page": "background.html"
-            }
-        }
+        "128": "img/icon128.png"
+    },
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "background": {
+        "page": "background.html"
+    }
+}
