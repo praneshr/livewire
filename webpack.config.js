@@ -17,14 +17,6 @@ var entries = [
     .concat(glob.sync('./img/*'));
 
 var IxInternetPortal = {
-    // entry: {
-    //     html : glob.sync('./*.html'),
-    //     scss : './css/main.scss',
-    //     img : glob.sync('./img/*'),
-    //     main : './js/Main.jsx',
-    //     backgroundJs : './js/background.js',
-    //     manifest : './manifest.json'
-    // },
     entry: entries,
     module: {
         loaders: [
